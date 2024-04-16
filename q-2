@@ -1,0 +1,89 @@
+●	Branching and Merging:
+●	a. Create a new branch called "feature" and make changes to the file "script.js" in that branch. Commit the changes.
+●	b. Switch back to the main branch and merge the "feature" branch into it, resolving any conflicts that arise.
+
+
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ git checkout -b feature
+fatal: a branch named 'feature' already exists
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ pwd
+/cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ ls -ltr
+total 4
+-rw-rw-r--+ 1 Dell None 2544 Apr 16 09:05 steps_to_push_code_to_remote
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ touch script.js
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ cat >> script.js
+Added code to show progress bar on the UI
+
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ git status
+On branch feature
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        script.js
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ git add script.js
+warning: in the working copy of 'script.js', LF will be replaced by CRLF the next time Git touches it
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ git commit -m "Adding new js script in feature branch by ram"
+[feature 07f3a31] Adding new js script in feature branch by ram
+ 1 file changed, 1 insertion(+)
+ create mode 100644 script.js
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ git fetch
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 866 bytes | 5.00 KiB/s, done.
+From https://github.com/kramsagar/my-remote-repo
+ * [new branch]      main       -> repo2/main
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ git checkout main
+Switched to a new branch 'main'
+branch 'main' set up to track 'repo2/main'.
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ git merge feature
+fatal: refusing to merge unrelated histories
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ git branch
+  feature
+* main
+  master
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ git checkout master
+Switched to branch 'master'
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ git merge feature
+Updating ae65c96..07f3a31
+Fast-forward
+ script.js | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 script.js
+
