@@ -87,3 +87,12 @@ Fast-forward
  1 file changed, 1 insertion(+)
  create mode 100644 script.js
 
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/remote-repo1
+$ git push --all
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'feature' on GitHub by visiting:
+remote:      https://github.com/kramsagar/my-remote-repo/pull/new/feature
+remote:
+To https://github.com/kramsagar/my-remote-repo.git
+ * [new branch]      feature -> feature
